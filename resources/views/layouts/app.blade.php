@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>@yield('title', 'Laravel house') - Laravel 小屋</title>
+	<title>@yield('title', 'Laravel House') - Laravel 小屋</title>
 	<link href="{{ mix('css/app.css') }} " rel="stylesheet">
 </head>
 <body>
@@ -17,4 +17,4 @@
 
 	<script src="{{ mix('js/app.js')}}"></script>
 </body>
-</html>>
+</html>
