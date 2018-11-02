@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 
+use App\Exceptions\InternalException;
+
 class CheckIfEmailVerified
 {
     /**
@@ -15,6 +17,10 @@ class CheckIfEmailVerified
      */
     public function handle($request, Closure $next)
     {
+        if (!isset($request->user()->email_verified)) {
+            throw new InternalException("不能访问");
+        }
+
         if (!$request->user()->email_verified) {
             if ($request->expectsJson()) {
                 return response()->json(['msg' => '请先验证邮箱'], 400);
