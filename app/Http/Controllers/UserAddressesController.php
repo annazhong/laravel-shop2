@@ -62,7 +62,7 @@ class UserAddressesController extends Controller
     public function delete(UserAddress $user_address)
     {
         $user_address->delete();
-
-        return redirect()->route('user_addresses.index');
+        // sweetalert will reload page.
+        return [];
     }
 }
