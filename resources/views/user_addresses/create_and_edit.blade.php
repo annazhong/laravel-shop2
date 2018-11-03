@@ -25,7 +25,7 @@
     <!-- 输出后端报错结束 -->
     <!-- inline-template 代表通过内联方式引入组件 -->
     <user-addresses-create-and-edit inline-template>
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" action="{{ route('user_addresses.store') }}" method="post">
         <!-- 引入 csrf token 字段 -->
         {{ csrf_field() }}
         <!-- 注意这里多了 @change -->
